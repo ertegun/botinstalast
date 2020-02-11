@@ -12,7 +12,7 @@ services:
     php:
         image: php:7-fpm
         ports:
-            - 9001:9001
+            - 9001:9000
         volumes:
             - ./code:/code
   
