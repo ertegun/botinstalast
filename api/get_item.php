@@ -1,13 +1,8 @@
 <?php
 header("Content-type: application/json; charset=utf-8");
 include '../mongo.php';
-// extract($_REQUEST);
-// $entityBody = file_get_contents('php://input');
 $data = json_decode(file_get_contents('php://input'), true);
-echo ($data);
-exit;
-
-$mid=$_REQUEST['mid'];
+$mid=$data['mid'];
 $document = $collection_MesajKutusu->findOne(['item_id' => $mid]);
 
 // $document = $collection_MesajKutusu->findOneAndUpdate(
