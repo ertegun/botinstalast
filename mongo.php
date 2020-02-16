@@ -3,7 +3,7 @@ require 'vendor/autoload.php';
 try {
   // Mongo Sunucusuna bağlanalım
   // $mongo = new MongoDB\Client("mongodb://localhost:27017");
-  $mongo = new MongoDB\Client("mongodb://192.168.20.129:32768");
+  $mongo = new MongoDB\Client("mongodb://192.168.20.129:7374");
   $db = $mongo->instabot;
   $collection_MesajKutusu = $db->MesajKutusu;
 } catch (\Throwable $e) {
