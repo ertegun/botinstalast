@@ -1,8 +1,12 @@
 <?php
+header("Access-Control-Allow-Origin: *");
 header("Content-type: application/json; charset=utf-8");
-include '../mongo.php';
+include 'mongo.php';
 $data = json_decode(file_get_contents('php://input'), true);
 $mid=$data['mid'];
+if ($mid=='') {
+  extract($_REQUEST);
+}
 $document = $collection_MesajKutusu->findOne(['item_id' => $mid]);
 
 // $document = $collection_MesajKutusu->findOneAndUpdate(

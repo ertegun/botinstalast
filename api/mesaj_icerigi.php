@@ -1,8 +1,8 @@
 <?php 
 // header("Content-type: application/json; charset=utf-8");
 
-include './config.php';
-include './mongo.php';
+include 'config.php';
+include 'mongo.php';
 
 extract($_REQUEST);
 

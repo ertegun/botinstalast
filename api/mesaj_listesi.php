@@ -1,6 +1,7 @@
 <?php
-include './config.php';
-include './mongo.php';
+header("Access-Control-Allow-Origin: *");
+include 'config.php';
+include 'mongo.php';
 
 $json = $ig->direct->getInbox();
 $inbox = json_decode($json);
