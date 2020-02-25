@@ -45,7 +45,7 @@
  <script>
 module.exports = {
   data: function() {
-    fetch("http://localhost:8888/api/get_item.php", {
+    fetch("http://localhost/api/get_item.php", {
       method: "POST",
       body: JSON.stringify({
         mid: this.$route.params.mid

@@ -5,8 +5,8 @@
     <router-link to="/contact" tag="a" class="link">İletişim</router-link>
     <router-link to="/post/29185270565491969640461529474138112" tag="a" class="link">İnstagram post</router-link>
     <a href="https://github.com/vuejs-templates/webpack-simple">webpack-simple</a>
-    <a href="http://localhost:8888">NGINX SERVER 8888</a>
-    <a href="http://localhost:8888/api">NGINX API</a>
+    <a href="http://localhost">NGINX SERVER 80</a>
+    <a href="http://localhost/api">NGINX API</a>
 
     <hr />
   </div>
@@ -15,7 +15,7 @@
  <script>
 module.exports = {
   data: function() {
-    fetch("http://localhost:8888/api/mesaj_listesi.php", {
+    fetch("http://localhost/api/mesaj_listesi.php", {
       method: "POST",
       body: JSON.stringify({
         mid: this.$route.params.mid
