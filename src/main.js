@@ -14,5 +14,9 @@ import { router } from "./router";
 new Vue({
   el: '#app',
   render: h => h(App),
-  router
+  router,
+  data: {
+    server_url: window.location.origin//"http://192.168.1.33"
+  }
 });
+

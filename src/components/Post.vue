@@ -1,5 +1,6 @@
 <template>
   <div>
+    
     <div class="container" id="app">
       <div class="row">
         <div class="col s12 m12">
@@ -43,9 +44,11 @@
   </div>
 </template>
  <script>
+
+ 
 module.exports = {
   data: function() {
-    fetch("http://localhost/api/get_item.php", {
+    fetch(this.$root.server_url+"/api/get_item.php", {
       method: "POST",
       body: JSON.stringify({
         mid: this.$route.params.mid
@@ -80,7 +83,7 @@ module.exports = {
         }
         this.caption = json.media_share.caption.text;
       });
-    console.log("asd", this.video_url);
+    // console.log("asd", this.video_url);
     return {
       msg: "Hello Post",
       image_url: this.image_url,

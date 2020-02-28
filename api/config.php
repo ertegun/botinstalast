@@ -4,6 +4,7 @@ $password = '1q2w3e';
 $my_user_id = '3418730320';
 $debug = false;
 $truncatedDebug = false;
+$serverUrl='http://'.$_SERVER['HTTP_HOST'];
 
 require __DIR__ . '/vendor/autoload.php';
 \InstagramAPI\Instagram::$allowDangerousWebUsageAtMyOwnRisk = true;
@@ -18,5 +19,3 @@ try {
   //throw $th;
   echo $th->getMessage();
 }
-
-?>
