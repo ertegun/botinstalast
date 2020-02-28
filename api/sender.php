@@ -15,7 +15,10 @@ try {
     $item_id = $document->item_id;
     var_dump($item_id, $document->user_id);
     $post_item_url = "$serverUrl/post/$item_id";
-    $sendMsg = $ig->direct->sendText($recipients, $post_item_url); //code...
+    if ($document->user_id != $my_user_id) {
+      $sendMsg = $ig->direct->sendText($recipients, $post_item_url); //code...
+
+    }
     // var_dump($sendMsg);
 
     $update = $collection_MesajKutusu->updateOne(
