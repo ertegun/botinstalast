@@ -15,7 +15,7 @@
  <script>
 module.exports = {
   data: function() {
-    fetch(this.$root.server_url + "/api/inboxtodb.php", {
+   /* fetch(this.$root.server_url + "/api/inboxtodb.php", {
       method: "POST",
       body: JSON.stringify({
         mid: this.$route.params.mid
@@ -28,7 +28,7 @@ module.exports = {
       console.log("OK");
     }); //fetch2end
     });
-
+*/
    
     return {
       msg: "Hello Post"

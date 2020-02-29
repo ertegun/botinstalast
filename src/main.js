@@ -16,7 +16,8 @@ new Vue({
   render: h => h(App),
   router,
   data: {
-    server_url: window.location.origin//"http://192.168.1.33"
+    server_url: window.location.origin
   }
 });
 
+console.log('v1.1',window.location.origin);
