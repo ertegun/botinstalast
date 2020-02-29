@@ -11,6 +11,7 @@ require __DIR__ . '/vendor/autoload.php';
 // \InstagramAPI\Utils::$ffprobeBin = 'D:/GitHub/instabot/ffmpeg/bin/ffprobe.exe';
 // \InstagramAPI\Media\Video\FFmpeg::$defaultBinary = 'D:/GitHub/instabot/ffmpeg/bin/ffmpeg.exe';
 
+/*
 $ig = new \InstagramAPI\Instagram($debug, $truncatedDebug);
 
 try {
@@ -18,4 +19,25 @@ try {
 } catch (\Throwable $th) {
   //throw $th;
   echo $th->getMessage();
+}
+*/
+
+
+
+$ig = new \InstagramAPI\Instagram($debug, $truncatedDebug);
+
+try {
+    $loginResponse = $ig->login($username, $password);
+
+    if ($loginResponse !== null && $loginResponse->isTwoFactorRequired()) {
+        $twoFactorIdentifier = $loginResponse->getTwoFactorInfo()->getTwoFactorIdentifier();
+
+        // The "STDIN" lets you paste the code via terminal for testing.
+        // You should replace this line with the logic you want.
+        // The verification code will be sent by Instagram via SMS.
+        $verificationCode = trim(fgets(STDIN));
+        $ig->finishTwoFactorLogin($username, $password, $twoFactorIdentifier, $verificationCode);
+    }
+} catch (\Exception $e) {
+    echo 'Something went wrong: '.$e->getMessage()."\n";
 }
