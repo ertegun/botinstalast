@@ -8,8 +8,8 @@ $serverUrl='http://'.$_SERVER['HTTP_HOST'];
 
 require __DIR__ . '/vendor/autoload.php';
 \InstagramAPI\Instagram::$allowDangerousWebUsageAtMyOwnRisk = true;
-\InstagramAPI\Utils::$ffprobeBin = 'D:/GitHub/instabot/ffmpeg/bin/ffprobe.exe';
-\InstagramAPI\Media\Video\FFmpeg::$defaultBinary = 'D:/GitHub/instabot/ffmpeg/bin/ffmpeg.exe';
+// \InstagramAPI\Utils::$ffprobeBin = 'D:/GitHub/instabot/ffmpeg/bin/ffprobe.exe';
+// \InstagramAPI\Media\Video\FFmpeg::$defaultBinary = 'D:/GitHub/instabot/ffmpeg/bin/ffmpeg.exe';
 
 $ig = new \InstagramAPI\Instagram($debug, $truncatedDebug);
 
