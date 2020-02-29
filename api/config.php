@@ -15,7 +15,7 @@ require __DIR__ . '/vendor/autoload.php';
 // \InstagramAPI\Utils::$ffprobeBin = 'D:/GitHub/instabot/ffmpeg/bin/ffprobe.exe';
 // \InstagramAPI\Media\Video\FFmpeg::$defaultBinary = 'D:/GitHub/instabot/ffmpeg/bin/ffmpeg.exe';
 
-/*
+
 $ig = new \InstagramAPI\Instagram($debug, $truncatedDebug);
 
 try {
@@ -24,10 +24,10 @@ try {
   //throw $th;
   echo $th->getMessage();
 }
-*/
 
 
 
+/*
 $ig = new \InstagramAPI\Instagram($debug, $truncatedDebug);
 
 try {
@@ -45,3 +45,4 @@ try {
 } catch (\Exception $e) {
     echo 'Something went wrong: '.$e->getMessage()."\n";
 }
+*/
