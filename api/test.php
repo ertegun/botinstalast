@@ -1,5 +1,5 @@
 <?php
-var_dump($_SERVER);
+var_dump(__DIR__);
 // echo phpinfo();
 //  $count = 1;
 
