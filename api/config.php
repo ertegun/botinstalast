@@ -4,7 +4,7 @@ set_time_limit(0);
 date_default_timezone_set('UTC');
 
 $username = 'badiekremix';
-$password = '1q2w3e';
+$password = 'Acer123ert';
 $my_user_id = '3418730320';
 $debug = false;
 $truncatedDebug = false;
