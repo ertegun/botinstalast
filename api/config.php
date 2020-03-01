@@ -30,7 +30,7 @@ $ig = new \InstagramAPI\Instagram($debug, $truncatedDebug);
 
 try {
     $loginResponse = $ig->login($username, $password);
-
+var_dump( $loginResponse);
     if ($loginResponse !== null && $loginResponse->isTwoFactorRequired()) {
         $twoFactorIdentifier = $loginResponse->getTwoFactorInfo()->getTwoFactorIdentifier();
 

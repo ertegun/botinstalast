@@ -2,7 +2,7 @@
 #bu sayfa sürekli çağırlacak
 #gelen kutusundaki son mesajları db ye kaydedip gelen kutusundan mesajları siler
 header("Access-Control-Allow-Origin: *");
-header("Content-type: application/json; charset=utf-8");
+// header("Content-type: application/json; charset=utf-8");
 include 'config.php';
 include 'mongo.php';
 
