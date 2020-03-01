@@ -37,7 +37,11 @@ try {
         // The "STDIN" lets you paste the code via terminal for testing.
         // You should replace this line with the logic you want.
         // The verification code will be sent by Instagram via SMS.
-        $verificationCode = trim(fgets(STDIN));
+        // $verificationCode = trim(fgets(STDIN));
+
+        $verificationCode =530162;
+var_dump($verificationCode);
+        
         $ig->finishTwoFactorLogin($username, $password, $twoFactorIdentifier, $verificationCode);
     }
 } catch (\Exception $e) {
