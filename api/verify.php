@@ -7,8 +7,8 @@ use InstagramAPI\Response\LoginResponse;
 
 \InstagramAPI\Instagram::$allowDangerousWebUsageAtMyOwnRisk = true;
 //Enter these options
-$username            = 'qralbot';
-$password            = '1q2w3e';
+$username            = 'badiekremix';
+$password            = 'Acer123ert';
 $verification_method = 0; //0 = SMS, 1 = Email
 
 //Leave these
