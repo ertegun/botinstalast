@@ -9,7 +9,7 @@ use InstagramAPI\Response\LoginResponse;
 //Enter these options
 $username            = 'badiekremix';
 $password            = 'Acer123ert';
-$verification_method = 0; //0 = SMS, 1 = Email
+$verification_method = 1; //0 = SMS, 1 = Email
 
 //Leave these
 $user_id      = '';
@@ -25,6 +25,7 @@ class ExtendedInstagram extends Instagram
 
 function readln($prompt)
 {
+	var_dump(PHP_OS);
 	if (PHP_OS === 'WINNT') {
 		echo "$prompt ";
 
@@ -39,7 +40,7 @@ $instagram = new ExtendedInstagram();
 try {
 	$loginResponse = $instagram->login($username, $password);
 	$user_id       = $instagram->account_id;
-
+	var_dump('$user_id ',	$user_id);
 	if ($loginResponse !== null && $loginResponse->isTwoFactorRequired()) {
 		echo '2FA not supported in this example';
 		exit;
@@ -62,7 +63,7 @@ try {
 		sleep(5);
 
 		$customResponse = $instagram->request(substr($response->getChallenge()->getApiPath(), 1))->setNeedsAuth(false)->addPost('choice', $verification_method)->getDecodedResponse();
-
+		var_dump($customResponse);
 		if (is_array($customResponse)) {
 			$user_id      = $customResponse['user_id'];
 			$challenge_id = $customResponse['nonce_code'];
