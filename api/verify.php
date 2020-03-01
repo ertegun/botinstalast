@@ -40,7 +40,7 @@ $instagram = new ExtendedInstagram();
 try {
 	$loginResponse = $instagram->login($username, $password);
 	$user_id       = $instagram->account_id;
-	var_dump('$user_id ',	$user_id);
+	
 	if ($loginResponse !== null && $loginResponse->isTwoFactorRequired()) {
 		echo '2FA not supported in this example';
 		exit;
