@@ -25,8 +25,8 @@ try {
   echo $th->getMessage();
 }
 
-
-
+echo 444;
+exit;
 /*
 $ig = new \InstagramAPI\Instagram($debug, $truncatedDebug);
 
