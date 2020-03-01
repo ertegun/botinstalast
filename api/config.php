@@ -17,7 +17,7 @@ require __DIR__ . '/vendor/autoload.php';
 
 
 $ig = new \InstagramAPI\Instagram($debug, $truncatedDebug);
-
+print_r($ig);
 try {
   $ig->login($username, $password);
 } catch (\Throwable $th) {
