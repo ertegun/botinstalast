@@ -20,4 +20,4 @@ new Vue({
   }
 });
 
-console.log('v1.1',window.location.origin);
+console.log('v1.2',window.location.origin);

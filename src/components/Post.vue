@@ -100,6 +100,7 @@ module.exports = {
     document
       .querySelector('meta[property="og:image"]')
       .setAttribute("content", this.image_url);
+    console.log("meta tags update");
 
     return {
       msg: "Hello Post",
