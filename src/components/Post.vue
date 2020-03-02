@@ -1,6 +1,5 @@
 <template>
   <div>
-    
     <div class="container" id="app">
       <div class="row">
         <div class="col s12 m12">
@@ -44,11 +43,9 @@
   </div>
 </template>
  <script>
-
- 
 module.exports = {
   data: function() {
-    fetch(this.$root.server_url+"/api/get_item.php", {
+    fetch(this.$root.server_url + "/api/get_item.php", {
       method: "POST",
       body: JSON.stringify({
         mid: this.$route.params.mid
@@ -58,7 +55,6 @@ module.exports = {
         return res.json();
       })
       .then(json => {
-      
         console.log(this.$route.params.mid);
         // console.log(json.media_share.carousel_media);
         switch (json.media_share.media_type) {
@@ -84,6 +80,27 @@ module.exports = {
         this.caption = json.media_share.caption.text;
       });
     // console.log("asd", this.video_url);
+
+    //   <meta property="og:url" content="http://www.nytimes.com/2015inds-dont-think-alike.html" />
+    // <meta property="og:type" content="article" />
+    // <meta property="og:title" content="When Great Minds Don’t Think Alike" />
+    // <meta property="og:description" content="How much does culture influence creative thinking?" />
+    // <meta property="og:image" content="http://static01.nyt.com/i19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />
+    var server_url = "http://grikar.ga";
+    document
+      .querySelector('meta[property="og:url"]')
+      .setAttribute("content", server_url + "/post/" + this.$route.params.mid);
+    // document.querySelector('meta[property="og:type"]').setAttribute("content", 'TESTDENEME');
+    document
+      .querySelector('meta[property="og:title"]')
+      .setAttribute("content", "grikar.ga post");
+    document
+      .querySelector('meta[property="og:description"]')
+      .setAttribute("content", this.caption);
+    document
+      .querySelector('meta[property="og:image"]')
+      .setAttribute("content", this.image_url);
+
     return {
       msg: "Hello Post",
       image_url: this.image_url,

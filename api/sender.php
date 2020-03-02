@@ -17,7 +17,6 @@ try {
     $post_item_url = "$serverUrl/post/$item_id";
     if ($document->user_id != $my_user_id) {
       $sendMsg = $ig->direct->sendText($recipients, $post_item_url); //code...
-
     }
     // var_dump($sendMsg);
 
@@ -25,7 +24,7 @@ try {
       ['item_id' => $document->item_id],
       ['$set' => ['status' => 1]]
     );
-    var_dump($update);
+    // var_dump($update);
   }
 } catch (\Throwable $th) {
   //throw $th;
