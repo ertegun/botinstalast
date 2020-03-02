@@ -81,26 +81,21 @@ module.exports = {
       });
     // console.log("asd", this.video_url);
 
-    //   <meta property="og:url" content="http://www.nytimes.com/2015inds-dont-think-alike.html" />
-    // <meta property="og:type" content="article" />
-    // <meta property="og:title" content="When Great Minds Don’t Think Alike" />
-    // <meta property="og:description" content="How much does culture influence creative thinking?" />
-    // <meta property="og:image" content="http://static01.nyt.com/i19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />
-    var server_url = "http://grikar.ga";
-    document
-      .querySelector('meta[property="og:url"]')
-      .setAttribute("content", server_url + "/post/" + this.$route.params.mid);
-    // document.querySelector('meta[property="og:type"]').setAttribute("content", 'TESTDENEME');
-    document
-      .querySelector('meta[property="og:title"]')
-      .setAttribute("content", "grikar.ga post");
-    document
-      .querySelector('meta[property="og:description"]')
-      .setAttribute("content", this.caption);
-    document
-      .querySelector('meta[property="og:image"]')
-      .setAttribute("content", this.image_url);
-    console.log("meta tags update");
+    // var server_url = "http://grikar.ga";
+    // document
+    //   .querySelector('meta[property="og:url"]')
+    //   .setAttribute("content", server_url + "/post/" + this.$route.params.mid);
+    // // document.querySelector('meta[property="og:type"]').setAttribute("content", 'TESTDENEME');
+    // document
+    //   .querySelector('meta[property="og:title"]')
+    //   .setAttribute("content", "grikar.ga post");
+    // document
+    //   .querySelector('meta[property="og:description"]')
+    //   .setAttribute("content", this.caption);
+    // document
+    //   .querySelector('meta[property="og:image"]')
+    //   .setAttribute("content", this.image_url);
+    // console.log("meta tags update");
 
     return {
       msg: "Hello Post",
