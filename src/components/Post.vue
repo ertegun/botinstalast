@@ -56,28 +56,47 @@ module.exports = {
       })
       .then(json => {
         console.log(this.$route.params.mid);
-        // console.log(json.media_share.carousel_media);
-        switch (json.media_share.media_type) {
-          case 1: //image
-            this.image_url = json.media_share.image_versions2.candidates[0].url;
-            break;
-          case 2: //video
-            this.video_url = json.media_share.video_versions[0].url;
-            break;
-          case 8: //carousel_media
-            this.carousel_media = json.media_share.carousel_media;
-            this.carousel_media.forEach(element => {
-              // console.log(element)
-            });
-            setTimeout(() => {
-              var elems = document.querySelectorAll(".slider");
-              var instances = M.Slider.init(elems);
-            }, 1000);
-            break;
-          default:
-            break;
+        if (json.item_type == "media_share") {
+          switch (json.media_share.media_type) {
+            case 1: //image
+              this.image_url =
+                json.media_share.image_versions2.candidates[0].url;
+              break;
+            case 2: //video
+              this.video_url = json.media_share.video_versions[0].url;
+              break;
+            case 8: //carousel_media
+              this.carousel_media = json.media_share.carousel_media;
+              this.carousel_media.forEach(element => {
+                // console.log(element)
+              });
+              setTimeout(() => {
+                var elems = document.querySelectorAll(".slider");
+                var instances = M.Slider.init(elems);
+              }, 1000);
+              break;
+            default:
+              break;
+          }
+          this.caption = json.media_share.caption.text;
         }
-        this.caption = json.media_share.caption.text;
+
+        if (json.item_type == "story_share") {
+          switch (json.story_share.media.media_type) {
+            case 1: //image
+              this.image_url =
+                json.story_share.media.image_versions2.candidates[0].url;
+              console.log(this.image_url);
+              break;
+            case 2: //video
+              this.video_url = json.story_share.media.video_versions[0].url;
+              console.log(this.video_url);
+
+              break;
+            default:
+              break;
+          }
+        }
       });
     // console.log("asd", this.video_url);
 
