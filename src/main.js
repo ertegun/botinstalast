@@ -18,8 +18,8 @@ new Vue({
   render: h => h(App),
   router,
   data: {
-    // server_url: window.location.origin
-    server_url: 'http://localhost'
+    server_url: window.location.origin
+    // server_url: 'http://localhost'
   }
 });
 
