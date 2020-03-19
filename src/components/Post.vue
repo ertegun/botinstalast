@@ -43,8 +43,44 @@
   </div>
 </template>
  <script>
-module.exports = {
+export default {
+  // name: "Post",
+  // metaInfo: {
+  //   meta: [
+  //     { name: "description", content: "foo" },
+  //     { property: "og:url", content: "http://grikar.ga" },
+  //     { property: "og:type", content: this.msg },
+  //     { property: "og:title", content: "Göremediğin post kalmayacak" },
+  //     {
+  //       property: "og:description",
+  //       content: "Arkadaşının takip etmediği sayfanın postunu benimle paylaş."
+  //     },
+  //     { property: "og:image", content: "http://grikar.ga/src/assets/crow.png" }
+  //   ],
+  //   // title will be injected into parent titleTemplate
+  //   title: "Post"
+  // },
+  metaInfo() {
+    return {
+      title: this.msg,
+      meta: [
+        { vmid: "description", name: "description", content: this.description },
+        // { name: "description", content: "foo" },
+        { property: "og:url", content: this.og_url },
+        { property: "og:type", content: this.msg },
+        { property: "og:title", content: this.og_title },
+        { property: "og:description", content: this.og_description },
+        {
+          property: "og:image",
+          content: this.og_image
+        }
+      ]
+    };
+  },
+
   data: function() {
+    console.log(this);
+
     fetch(this.$root.server_url + "/api/get_item.php", {
       method: "POST",
       body: JSON.stringify({
@@ -91,7 +127,6 @@ module.exports = {
             case 2: //video
               this.video_url = json.story_share.media.video_versions[0].url;
               console.log(this.video_url);
-
               break;
             default:
               break;
@@ -121,7 +156,12 @@ module.exports = {
       image_url: this.image_url,
       video_url: this.video_url,
       carousel_media: this.carousel_media,
-      caption: this.caption
+      caption: this.caption,
+      description: "rtertertert",
+      og_description:this.caption,
+      og_image:this.image_url,
+      og_url:this.image_url,
+      og_title:this.caption
     };
   }
 };

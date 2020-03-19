@@ -12,6 +12,7 @@
           </div>
           <div class="card-content">
             <p>
+              <!-- {{msg}} -->
               Arkadaşınla paylaştığın postu arkadaşın takip etmediği için göremiyor mu?
               Önce benimle paylaş.Bende sana onun görebileceği linki mesaj olarak atayım.
             </p>
@@ -32,7 +33,44 @@
 </template>
 
  <script>
-module.exports = {
+// module.exports = {
+//   data: function() {
+//     fetch(this.$root.server_url + "/api/inboxtodb.php", {
+//       method: "POST",
+//       body: JSON.stringify({
+//         mid: this.$route.params.mid
+//       })
+//     }).then(json => {
+//       console.log("OK", this.$root.server_url);
+//       fetch(this.$root.server_url + "/api/sender.php", {
+//         method: "POST"
+//       }).then(json => {
+//         console.log("OK");
+//       }); //fetch2end
+//     });
+
+//     return {
+//       msg: "Hello Post",
+//       name:'Home',
+//       metaInfo: {
+//       title: 'My Example App',
+//       // titleTemplate: '%s - Yay!',
+//       htmlAttrs: {
+//         lang: 'en',
+//         amp: true
+//       }
+//     }
+//     };
+//   }
+// };
+
+export default {
+  name: "Home",
+  metaInfo: {
+    // title will be injected into parent titleTemplate
+    title: "Home"
+  },
+  // msg:'asdasdasd0',
   data: function() {
     fetch(this.$root.server_url + "/api/inboxtodb.php", {
       method: "POST",
@@ -47,10 +85,7 @@ module.exports = {
         console.log("OK");
       }); //fetch2end
     });
-
-    return {
-      msg: "Hello Post"
-    };
+    return {msg:'ddddd'}
   }
 };
 </script>
