@@ -79,8 +79,6 @@ export default {
   },
 
   data: function() {
-    console.log(this);
-
     fetch(this.$root.server_url + "/api/get_item.php", {
       method: "POST",
       body: JSON.stringify({
@@ -132,25 +130,23 @@ export default {
               break;
           }
         }
+        console.log("fetch");
+        return {
+          msg: "Hello Post",
+          image_url: this.image_url,
+          video_url: this.video_url,
+          carousel_media: this.carousel_media,
+          caption: this.caption,
+          description: "rtertertert",
+          og_description: this.caption,
+          og_image: this.image_url,
+          og_url: this.image_url,
+          og_title: this.caption
+        };
       });
-    // console.log("asd", this.video_url);
 
-    // var server_url = "http://grikar.ga";
-    // document
-    //   .querySelector('meta[property="og:url"]')
-    //   .setAttribute("content", server_url + "/post/" + this.$route.params.mid);
-    // // document.querySelector('meta[property="og:type"]').setAttribute("content", 'TESTDENEME');
-    // document
-    //   .querySelector('meta[property="og:title"]')
-    //   .setAttribute("content", "grikar.ga post");
-    // document
-    //   .querySelector('meta[property="og:description"]')
-    //   .setAttribute("content", this.caption);
-    // document
-    //   .querySelector('meta[property="og:image"]')
-    //   .setAttribute("content", this.image_url);
-    // console.log("meta tags update");
-
+    console.log("end");
+    setTimeout(() => {}, 3000);
     return {
       msg: "Hello Post",
       image_url: this.image_url,
@@ -158,10 +154,10 @@ export default {
       carousel_media: this.carousel_media,
       caption: this.caption,
       description: "rtertertert",
-      og_description:this.caption,
-      og_image:this.image_url,
-      og_url:this.image_url,
-      og_title:this.caption
+      og_description: this.caption,
+      og_image: this.image_url,
+      og_url: this.image_url,
+      og_title: this.caption
     };
   }
 };
